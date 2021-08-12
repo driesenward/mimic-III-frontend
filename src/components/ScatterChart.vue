@@ -33,6 +33,9 @@ export default {
           toolbar: {
             show: false,
           },
+          zoom: {
+            enabled: false,
+          },
         },
         legend: {
           position: "top",

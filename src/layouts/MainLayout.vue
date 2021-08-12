@@ -12,6 +12,8 @@
         />
 
         <q-toolbar-title>MIMIC-III Visualization</q-toolbar-title>
+        <q-space />
+        <q-img class="my-imec-logo" :src="image('imec_logo.png')" />
       </q-toolbar>
     </q-header>
 
@@ -29,6 +31,9 @@
       <div class="full-height drawer_normal">
         <div style="height: calc(100% - 117px); padding: 10px">
           <q-toolbar>
+            <q-avatar>
+              <q-img class="my-imec-logo" :src="image('me.png')" />
+            </q-avatar>
             <q-toolbar-title>Ward Driesen</q-toolbar-title>
           </q-toolbar>
           <hr />
@@ -43,7 +48,7 @@
                 v-ripple
               >
                 <q-item-section avatar>
-                  <q-icon name="space_dashboard" />
+                  <q-icon name="dashboard" />
                 </q-item-section>
 
                 <q-item-section> Home </q-item-section>
@@ -73,7 +78,7 @@
                 v-ripple
               >
                 <q-item-section avatar>
-                  <q-icon name="space_dashboard" />
+                  <q-icon name="grid_view" />
                 </q-item-section>
 
                 <q-item-section> Individual </q-item-section>
@@ -90,7 +95,7 @@
   </q-layout>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent, ref } from "vue";
 
 export default defineComponent({
@@ -101,6 +106,11 @@ export default defineComponent({
     return {
       leftDrawerOpen,
     };
+  },
+  methods: {
+    image(image) {
+      return require(`../statics/images/${image}`);
+    },
   },
 });
 </script>
@@ -124,5 +134,9 @@ body {
 
 .header_normal {
   background: #3f98bd;
+}
+
+.my-imec-logo {
+  width: 100px;
 }
 </style>

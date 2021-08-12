@@ -29,7 +29,7 @@ export default {
       .catch((err) => {
         this.error = true;
       });
-  },
+  }
 };
 </script>
 
