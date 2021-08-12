@@ -51,7 +51,7 @@
 
               <q-item
                 active-class="tab-active"
-                to="/visualize"
+                to="/visualizeBar"
                 exact
                 class="q-ma-sm navigation-item"
                 clickable
@@ -61,7 +61,22 @@
                   <q-icon name="space_dashboard" />
                 </q-item-section>
 
-                <q-item-section> Visualization </q-item-section>
+                <q-item-section> Grouped </q-item-section>
+              </q-item>
+
+              <q-item
+                active-class="tab-active"
+                to="/visualizeScatter"
+                exact
+                class="q-ma-sm navigation-item"
+                clickable
+                v-ripple
+              >
+                <q-item-section avatar>
+                  <q-icon name="space_dashboard" />
+                </q-item-section>
+
+                <q-item-section> Individual </q-item-section>
               </q-item>
             </q-list>
           </q-scroll-area>

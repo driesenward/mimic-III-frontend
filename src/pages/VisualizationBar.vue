@@ -3,17 +3,17 @@
     <div v-if="error" class="my-error-wrapper q-mb-xl">
       <div>An error occured, try again later.</div>
     </div>
-    <chart-component :allData="allData"></chart-component>
+    <bar-chart :allData="allData"></bar-chart>
   </q-page>
 </template>
 
 <script>
 import api from "../service/ApiService";
-import ChartComponent from "../components/ChartComponent.vue";
+import BarChart from "../components/BarChart.vue";
 
 export default {
-  name: "Visualization",
-  components: { ChartComponent },
+  name: "VisualizationBar",
+  components: { BarChart },
   data() {
     return {
       allData: undefined,
@@ -22,7 +22,7 @@ export default {
   },
   created() {
     api
-      .fetchTest()
+      .fetchGroupedResults()
       .then((response) => {
         this.allData = response.data;
       })
