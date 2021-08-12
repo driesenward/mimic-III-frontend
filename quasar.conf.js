@@ -66,6 +66,12 @@ module.exports = configure(function (ctx) {
       chainWebpack (/* chain */) {
         //
       },
+
+      env: {
+        backend: ctx.dev 
+          ? "http://localhost:9090"
+          : "LINK_TO_DEPLOYED_SERVICE"
+      }
     },
 
     // Full list of options: https://v2.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
