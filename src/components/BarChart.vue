@@ -22,7 +22,7 @@ export default {
       chartOptions: {
         colors: ["#3f98bd", "#3c3c3b"],
         title: {
-          text: "Admission rate based on age and sex",
+          text: "Number of admissions based on age and sex",
           align: "center",
           style: {
             fontSize: "20px",

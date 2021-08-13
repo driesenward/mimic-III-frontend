@@ -3,6 +3,12 @@
     <div v-if="error" class="my-error-wrapper q-mb-xl">
       <div>An error occured, try again later.</div>
     </div>
+    <q-btn
+      class="my-insert-button absolute-top-right q-ma-md"
+      color="primary"
+      label="Insert testdata"
+      @click="mockData"
+    />
     <bar-chart :allData="allData"></bar-chart>
   </q-page>
 </template>
@@ -29,7 +35,33 @@ export default {
       .catch((err) => {
         this.error = true;
       });
-  }
+  },
+  methods: {
+    mockData() {
+      let male = [];
+      let female = [];
+
+      let mockMultiplier = 20;
+      for (let i = 0; i < 9; i++) {
+        male.push(Math.floor(this.calculateRandom(mockMultiplier)));
+        female.push(Math.floor(this.calculateRandom(mockMultiplier)));
+
+        mockMultiplier += 10;
+      }
+
+      this.allData = {
+        categories: this.allData.categories,
+        male: male,
+        female: female,
+      };
+    },
+    calculateRandom(mockMultiplier) {
+      return (
+        Math.floor(Math.random() * mockMultiplier) +
+        mockMultiplier * Math.random() * 1000
+      );
+    },
+  },
 };
 </script>
 
@@ -47,5 +79,9 @@ export default {
   border-radius: 4px;
   border-width: 0 5px;
   padding: 16px 24px;
+}
+
+.my-insert-button {
+  background: #3c3c3b !important;
 }
 </style>
