@@ -11,7 +11,7 @@
           class="q-mr-sm"
         />
 
-        <q-toolbar-title>MIMIC-III Visualization</q-toolbar-title>
+        <q-toolbar-title>MIMIC III Visualization</q-toolbar-title>
         <q-space />
         <q-img class="my-imec-logo" :src="image('imec_logo.png')" />
       </q-toolbar>
